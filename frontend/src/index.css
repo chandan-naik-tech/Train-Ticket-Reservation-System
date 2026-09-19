@@ -1,0 +1,331 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3e62;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #008dd5;
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(15, 32, 53, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  background: rgba(30, 62, 98, 0.55);
+  border-color: rgba(0, 141, 213, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(0, 141, 213, 0.15);
+}
+
+.glass-input {
+  background: rgba(3, 7, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+.glass-input:focus {
+  border-color: #008dd5;
+  box-shadow: 0 0 0 2px rgba(0, 141, 213, 0.2);
+  outline: none;
+}
+
+.glass-btn {
+  background: linear-gradient(135deg, #1e3e62 0%, #008dd5 100%);
+  color: white;
+  border: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 141, 213, 0.25);
+}
+.glass-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 141, 213, 0.4);
+  opacity: 0.95;
+}
+
+/* Animations */
+@keyframes trainMove {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+.animate-train {
+  animation: trainMove 18s linear infinite;
+}
+
+.glow-glow {
+  box-shadow: 0 0 20px rgba(0, 141, 213, 0.4);
+}
+
+/* Custom styles for maps and visuals */
+.station-dot {
+  position: relative;
+}
+.station-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  border-radius: 50%;
+  border: 2px dashed rgba(0, 141, 213, 0.5);
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* =====================================================
+   PREMIUM LIGHT MODE STYLESHEET
+   ===================================================== */
+
+/* Global body, root, and main background overrides */
+.light,
+.light body,
+.light #root,
+.light .bg-slate-950,
+.light .bg-slate-900,
+.light .bg-railway-dark,
+.light .bg-railway-blue,
+.light .bg-slate-950\/80,
+.light .bg-slate-950\/60,
+.light .bg-slate-950\/40,
+.light .bg-slate-950\/30,
+.light .bg-slate-950\/20,
+.light .bg-slate-950\/10,
+.light .bg-slate-900\/40,
+.light .bg-slate-900\/60,
+.light .bg-slate-900\/80,
+.light .bg-slate-950\/80,
+.light .bg-slate-900\/60,
+.light .bg-slate-950/40,
+.light .bg-slate-950/30,
+.light .bg-slate-950/20,
+.light .bg-slate-950/10,
+.light .bg-slate-900/40,
+.light .bg-slate-900/60,
+.light .bg-slate-900/80,
+.light .bg-slate-950/80 {
+  background-color: #f8fafc !important;
+}
+
+/* Light overlay on the train collage hero and login backdrops */
+.light div[style*="train_bg.jpg"] {
+  background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.45) 0%, rgba(248, 250, 252, 0.98) 100%), url('/train_bg.jpg') !important;
+}
+
+/* Subcontainers and widgets contrast */
+.light .bg-slate-950\/60,
+.light .bg-slate-950\/40,
+.light .bg-slate-950\/30,
+.light .bg-slate-950\/20,
+.light .bg-slate-950\/10,
+.light .bg-slate-900\/40,
+.light .bg-slate-900\/60,
+.light .bg-slate-950/40,
+.light .bg-slate-950/30,
+.light .bg-slate-950/20,
+.light .bg-slate-950/10,
+.light .bg-slate-900/40,
+.light .bg-slate-900/60,
+.light .bg-slate-900\/60 {
+  background-color: #f1f5f9 !important;
+}
+
+/* Premium translucent white cards */
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+.light .glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(0, 141, 213, 0.4) !important;
+  box-shadow: 0 12px 40px rgba(0, 141, 213, 0.08) !important;
+}
+
+/* Inputs, buttons, and select dropdowns */
+.light .glass-input,
+.light select {
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.light select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.light .glass-input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.light .glass-input:focus {
+  border-color: #008dd5 !important;
+  box-shadow: 0 0 0 2px rgba(0, 141, 213, 0.15) !important;
+}
+
+/* Text color adaptations */
+.light .text-white,
+.light .text-slate-100,
+.light .text-gray-100,
+.light .text-gray-200 {
+  color: #0f172a !important;
+}
+
+.light .text-gray-300,
+.light .text-gray-400 {
+  color: #334155 !important;
+}
+
+.light .text-gray-500 {
+  color: #64748b !important;
+}
+
+/* Border and dividers overrides */
+.light .border-gray-800,
+.light .border-gray-850,
+.light .border-gray-900,
+.light .border-white\/5,
+.light .border-white\/10,
+.light .border-white/10 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Autocomplete suggestion popups */
+.light .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .bg-slate-900 button {
+  color: #0f172a !important;
+}
+
+.light .bg-slate-900 button:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.light .bg-slate-900 button p {
+  color: #0f172a !important;
+}
+
+.light .bg-slate-900 button p.text-gray-400 {
+  color: #64748b !important;
+}
+
+/* Navigation items overrides */
+.light nav {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light nav Link,
+.light nav span,
+.light nav a {
+  color: #0f172a !important;
+}
+
+.light nav a:hover {
+  color: #008dd5 !important;
+}
+
+.light nav .text-gray-400 {
+  color: #475569 !important;
+}
+
+.light nav .bg-gray-800 {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light nav .bg-gray-800 span {
+  color: #334155 !important;
+}
+
+.light nav .bg-slate-950 {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light nav .bg-slate-950 button {
+  color: #475569 !important;
+}
+
+.light nav .bg-slate-950 button.bg-railway-navy {
+  background-color: #e2e8f0 !important;
+  color: #008dd5 !important;
+}
+
+/* Footer overrides */
+.light footer {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+.light footer a {
+  color: #64748b !important;
+}
+
+.light footer a:hover {
+  color: #008dd5 !important;
+}
+
+/* Scrollbar Track customization */
+.light ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+/* Moving train tracks on Home page */
+.light .bg-slate-950\/80 {
+  background-color: #e2e8f0 !important;
+}
+
+.light .bg-slate-950\/80 .bg-gray-800 {
+  background-color: #cbd5e1 !important;
+}
+
+/* Table grids */
+.light table th {
+  color: #475569 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light table tr:hover {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
